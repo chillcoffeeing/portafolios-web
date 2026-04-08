@@ -11,7 +11,7 @@ import netlify from '@astrojs/netlify';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://victor.dev',
+  base: '/',
   output: 'server',
   adapter:process.env.NODE_ENV === 'production' ? netlify() : node({
     mode: 'standalone',
