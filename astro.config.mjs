@@ -11,6 +11,7 @@ import netlify from '@astrojs/netlify';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://portafolio-victor-veliz.netlify.app',
   base: '/',
   output: 'server',
   adapter: process.env.NODE_ENV === 'production' ? netlify() : node({
