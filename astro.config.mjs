@@ -7,12 +7,13 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import icon from 'astro-icon';
 import node from '@astrojs/node';
+import netlify from '@astrojs/netlify';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://victor.dev',
   output: 'server',
-  adapter: node({
+  adapter:process.env.NODE_ENV === 'production' ? netlify() : node({
     mode: 'standalone',
   }),
   integrations: [
