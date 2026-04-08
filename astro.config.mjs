@@ -13,7 +13,7 @@ import netlify from '@astrojs/netlify';
 export default defineConfig({
   base: '/',
   output: 'server',
-  adapter:process.env.NODE_ENV === 'production' ? netlify() : node({
+  adapter: process.env.NODE_ENV === 'production' ? netlify() : node({
     mode: 'standalone',
   }),
   integrations: [
