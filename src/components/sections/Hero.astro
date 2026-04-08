@@ -21,6 +21,7 @@ import Button from '../ui/Button.astro';
       <!-- Availability badge -->
       <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-accent/20 bg-accent/5 mb-8 fade-up">
         <span class="w-2 h-2 rounded-full bg-success text-success arcade-pulse"></span>
+        <Icon name="ph:broadcast-duotone" class="w-3.5 h-3.5 text-accent" />
         <span class="text-xs font-mono font-medium text-accent">DISPONIBLE PARA PROYECTOS</span>
       </div>
 
@@ -30,7 +31,7 @@ import Button from '../ui/Button.astro';
         style="animation-delay: 100ms"
         transition:name="hero-title"
       >
-        <span class="gradient-text-animated">Victor</span><span class="text-accent arcade-pulse">_</span>
+        <span class="gradient-text-animated"><!-- Victor -->_</span>
       </h1>
 
       <!-- Role -->
@@ -53,9 +54,10 @@ import Button from '../ui/Button.astro';
       <div class="flex flex-wrap gap-4 fade-up" style="animation-delay: 400ms">
         <Button href="/projects" variant="primary" size="lg">
           Ver Proyectos
-          <Icon name="ph:arrow-right-duotone" class="w-4 h-4" />
+          <Icon name="ph:arrow-right-duotone" class="w-5 h-5" />
         </Button>
         <Button href="/contact" variant="secondary" size="lg">
+          <Icon name="ph:envelope-duotone" class="w-5 h-5" />
           Contactar
         </Button>
       </div>

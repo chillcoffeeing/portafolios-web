@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon/components';
 import Button from '../ui/Button.astro';
 import { siteConfig } from '../../data/site';
 ---
@@ -27,9 +28,11 @@ import { siteConfig } from '../../data/site';
         </p>
         <div class="flex flex-wrap justify-center gap-4">
           <Button href="/contact" variant="primary" size="lg">
+            <Icon name="ph:envelope-duotone" class="w-5 h-5" />
             Contactar
           </Button>
           <Button href={siteConfig.links.linkedin} variant="secondary" size="lg">
+            <Icon name="ph:linkedin-logo-duotone" class="w-5 h-5" />
             LinkedIn
           </Button>
         </div>

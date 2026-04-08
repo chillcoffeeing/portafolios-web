@@ -6,26 +6,26 @@ import SkillsGrid from '../components/sections/SkillsGrid.astro';
 import ContactCTA from '../components/sections/ContactCTA.astro';
 
 const competencies = [
-  { area: 'Arquitectura & Diseño', items: [
+  { area: 'Arquitectura & Diseño', icon: 'ph:compass-duotone', items: [
     'Arquitecturas escalables y sostenibles',
     'APIs REST bien diseñadas',
     'Patrones: MVC, Repository, Service Layer, Event-Driven',
     'Sistemas white-label y multi-tenant',
     'Separación backend/frontend desacoplada',
   ]},
-  { area: 'Desarrollo', items: [
+  { area: 'Desarrollo', icon: 'ph:terminal-window-duotone', items: [
     'Full-stack TypeScript / JavaScript / Python',
     'Apps móviles multiplataforma con Expo',
     'Frontends de alto rendimiento con Astro y Nuxt.js',
     'Desarrollo asistido por IA con Claude Code',
   ]},
-  { area: 'DevOps & Producción', items: [
+  { area: 'DevOps & Producción', icon: 'ph:rocket-launch-duotone', items: [
     'Servidores VPS (Linux/Nginx/Docker)',
     'CI/CD con GitHub Actions',
     'Deploy en Cloudflare, Railway, VPS',
     'Monitoreo con Sentry',
   ]},
-  { area: 'Innovación', items: [
+  { area: 'Innovación', icon: 'ph:lightbulb-duotone', items: [
     'Integración de IA generativa en productos',
     'Automatización de workflows con n8n',
     'Tiempo real con WebSockets',
@@ -77,13 +77,14 @@ const competencies = [
               class="rounded-xl arcade-card p-6 fade-up"
               style={`animation-delay: ${idx * 100}ms`}
             >
-              <h3 class="text-sm font-semibold uppercase tracking-widest text-accent font-mono mb-4">
+              <h3 class="text-sm font-semibold uppercase tracking-widest text-accent font-mono mb-4 flex items-center gap-2">
+                <Icon name={comp.icon} class="w-6 h-6 text-accent-secondary" />
                 <span class="text-accent-secondary">//</span> {comp.area}
               </h3>
               <ul class="space-y-2">
                 {comp.items.map((item) => (
                   <li class="flex items-start gap-2 text-sm text-text-muted">
-                    <Icon name="ph:caret-right-duotone" class="w-4 h-4 text-accent mt-0.5 shrink-0" />
+                    <Icon name="ph:caret-right-duotone" class="w-5 h-5 text-accent mt-0.5 shrink-0" />
                     {item}
                   </li>
                 ))}

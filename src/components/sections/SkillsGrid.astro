@@ -23,7 +23,7 @@ import { skillCategories } from '../../data/skills';
           <div class="space-y-3">
             {category.skills.map((skill) => (
               <div class="flex items-center gap-3 text-text-muted hover:text-accent transition-all duration-300 group/skill">
-                <Icon name={skill.icon} class="w-5 h-5 shrink-0 group-hover/skill:drop-shadow-[0_0_6px_var(--color-glow)]" />
+                <Icon name={skill.icon} class="w-6 h-6 shrink-0 group-hover/skill:drop-shadow-[0_0_6px_var(--color-glow)]" />
                 <span class="text-sm font-medium">{skill.name}</span>
               </div>
             ))}

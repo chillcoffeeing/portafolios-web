@@ -64,6 +64,7 @@ import { siteConfig } from '../data/site';
           </div>
 
           <Button variant="primary" size="lg" type="submit">
+            <Icon name="ph:paper-plane-tilt-duotone" class="w-5 h-5" />
             Enviar mensaje
           </Button>
         </form>
@@ -72,19 +73,28 @@ import { siteConfig } from '../data/site';
         <div class="fade-up" style="animation-delay: 200ms">
           <div class="rounded-xl arcade-card p-8 space-y-6">
             <div>
-              <h3 class="font-bold mb-2 font-mono text-sm text-accent">// Email directo</h3>
+              <h3 class="font-bold mb-2 font-mono text-sm text-accent flex items-center gap-2">
+                <Icon name="ph:envelope-duotone" class="w-5 h-5" />
+                // Email directo
+              </h3>
               <a href={siteConfig.links.email} class="text-text-muted hover:text-accent text-sm transition-colors">
                 victorveliz98.vv@gmail.com
               </a>
             </div>
             <div>
-              <h3 class="font-bold mb-2 font-mono text-sm text-accent-secondary">// LinkedIn</h3>
+              <h3 class="font-bold mb-2 font-mono text-sm text-accent-secondary flex items-center gap-2">
+                <Icon name="ph:linkedin-logo-duotone" class="w-5 h-5" />
+                // LinkedIn
+              </h3>
               <a href={siteConfig.links.linkedin} target="_blank" rel="noopener noreferrer" class="text-text-muted hover:text-accent-secondary text-sm transition-colors">
                 /in/victor-veliz
               </a>
             </div>
             <div>
-              <h3 class="font-bold mb-2 font-mono text-sm text-accent-tertiary">// GitHub</h3>
+              <h3 class="font-bold mb-2 font-mono text-sm text-accent-tertiary flex items-center gap-2">
+                <Icon name="ph:github-logo-duotone" class="w-5 h-5" />
+                // GitHub
+              </h3>
               <a href={siteConfig.links.github} target="_blank" rel="noopener noreferrer" class="text-text-muted hover:text-accent-tertiary text-sm transition-colors">
                 @chillcoffeeing
               </a>
@@ -92,6 +102,7 @@ import { siteConfig } from '../data/site';
 
             <div class="pt-4 border-t border-border/50">
               <div class="flex items-center gap-2">
+                <Icon name="ph:broadcast-duotone" class="w-5 h-5 text-success" />
                 <span class="w-2 h-2 rounded-full bg-success text-success arcade-pulse"></span>
                 <span class="text-sm text-text-muted font-mono">status: disponible</span>
               </div>

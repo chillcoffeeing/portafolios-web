@@ -17,6 +17,12 @@ const typeLabels = {
   mobile: 'Mobile',
   fullstack: 'Full-Stack',
 };
+
+const typeIcons = {
+  web: 'ph:globe-duotone',
+  mobile: 'ph:device-mobile-duotone',
+  fullstack: 'ph:stack-duotone',
+} as const;
 ---
 
 <BaseLayout
@@ -34,15 +40,21 @@ const typeLabels = {
     <div class="relative max-w-4xl mx-auto px-6">
       <!-- Back -->
       <Button href="/projects" variant="ghost" size="sm" class="mb-8">
-        <Icon name="ph:arrow-left-duotone" class="w-4 h-4" />
+        <Icon name="ph:arrow-left-duotone" class="w-5 h-5" />
         <span class="font-mono">&lt;-</span> Volver a proyectos
       </Button>
 
       <!-- Header -->
       <div class="mb-12" transition:name={`project-card-${project.slug}`}>
         <div class="flex items-center gap-3 mb-4">
-          <Badge variant="type">{typeLabels[project.type]}</Badge>
-          <span class="text-sm text-text-muted font-mono">{project.architecture}</span>
+          <Badge variant="type">
+            <Icon name={typeIcons[project.type]} class="w-3.5 h-3.5" />
+            {typeLabels[project.type]}
+          </Badge>
+          <span class="text-sm text-text-muted font-mono">
+            <Icon name="ph:tree-structure-duotone" class="w-3.5 h-3.5 inline -mt-0.5" />
+            {project.architecture}
+          </span>
         </div>
 
         <h1 class="text-4xl md:text-5xl font-extrabold tracking-tighter mb-4 gradient-text">
@@ -56,7 +68,10 @@ const typeLabels = {
 
       <!-- Description -->
       <section class="mb-12">
-        <h2 class="text-xl font-bold mb-4 font-mono text-accent">// Descripción</h2>
+        <h2 class="text-xl font-bold mb-4 font-mono text-accent flex items-center gap-2">
+          <Icon name="ph:article-duotone" class="w-6 h-6" />
+          // Descripción
+        </h2>
         <p class="text-text-muted leading-relaxed text-lg">
           {project.description}
         </p>
@@ -64,11 +79,14 @@ const typeLabels = {
 
       <!-- Highlights -->
       <section class="mb-12">
-        <h2 class="text-xl font-bold mb-4 font-mono text-accent-secondary">// Highlights Técnicos</h2>
+        <h2 class="text-xl font-bold mb-4 font-mono text-accent-secondary flex items-center gap-2">
+          <Icon name="ph:lightning-duotone" class="w-6 h-6" />
+          // Highlights Técnicos
+        </h2>
         <ul class="space-y-3">
           {project.highlights.map((highlight) => (
             <li class="flex items-start gap-3 text-text-muted">
-              <Icon name="ph:caret-right-duotone" class="w-4 h-4 text-accent mt-1 shrink-0" />
+              <Icon name="ph:caret-right-duotone" class="w-5 h-5 text-accent mt-1 shrink-0" />
               <span>{highlight}</span>
             </li>
           ))}
@@ -77,7 +95,10 @@ const typeLabels = {
 
       <!-- Stack -->
       <section class="mb-12">
-        <h2 class="text-xl font-bold mb-4 font-mono text-accent-tertiary">// Stack Tecnológico</h2>
+        <h2 class="text-xl font-bold mb-4 font-mono text-accent-tertiary flex items-center gap-2">
+          <Icon name="ph:stack-duotone" class="w-6 h-6" />
+          // Stack Tecnológico
+        </h2>
         <div class="flex flex-wrap gap-2">
           {project.stack.map((tech) => (
             <Badge>{tech}</Badge>
