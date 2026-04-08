@@ -1,0 +1,59 @@
+---
+import { Icon } from 'astro-icon/components';
+import SectionHeading from '../ui/SectionHeading.astro';
+
+const patterns = [
+  {
+    name: 'Service Layer & Clean Architecture',
+    description: 'Separación clara de responsabilidades con services, repositories y validación por capas.',
+    icon: 'ph:buildings-duotone',
+  },
+  {
+    name: 'JAMstack / SSR Híbrido',
+    description: 'Astro y Nuxt.js con rendering estático donde es posible y SSR donde se necesita contenido dinámico.',
+    icon: 'ph:lightning-duotone',
+  },
+  {
+    name: 'Event-Driven & Colas',
+    description: 'Redis + workers para procesamiento asíncrono y desacoplamiento de servicios.',
+    icon: 'ph:broadcast-duotone',
+  },
+  {
+    name: 'White-Label Architecture',
+    description: 'Un core, múltiples marcas. Build variants y configuración por entorno.',
+    icon: 'ph:tag-duotone',
+  },
+  {
+    name: 'BaaS + Serverless',
+    description: 'Supabase como backend completo con Edge Functions para lógica sin servidor propio.',
+    icon: 'ph:cloud-duotone',
+  },
+  {
+    name: 'Multi-App Ecosystem',
+    description: 'Mobile + API + Website + Admin Panel compartiendo el mismo backend y base de datos.',
+    icon: 'ph:link-simple-duotone',
+  },
+];
+---
+
+<section class="py-14 fade-up">
+  <div class="max-w-6xl mx-auto px-6">
+    <SectionHeading
+      title="Arquitectura & Patrones"
+      subtitle="Decisiones técnicas reales aplicadas en producción"
+    />
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {patterns.map((pattern, idx) => (
+        <div
+          class="rounded-xl arcade-card p-6 fade-up"
+          style={`animation-delay: ${idx * 80}ms`}
+        >
+          <Icon name={pattern.icon} class="w-7 h-7 mb-3 text-accent" aria-hidden="true" />
+          <h3 class="font-duotone text-base mb-2 text-accent">{pattern.name}</h3>
+          <p class="text-sm text-text-muted leading-relaxed">{pattern.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

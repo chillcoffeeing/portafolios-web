@@ -1,0 +1,37 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<button
+  id="theme-toggle"
+  class="p-2 rounded-lg text-text-muted hover:text-accent transition-all duration-300 hover:bg-accent/10"
+  aria-label="Cambiar tema"
+  type="button"
+>
+  <Icon name="ph:sun-duotone" class="w-5 h-5" data-theme-icon="dark" />
+  <Icon name="ph:moon-duotone" class="w-5 h-5" data-theme-icon="light" />
+</button>
+
+<style is:global>
+  [data-theme-icon="light"] { display: none; }
+  [data-theme-icon="dark"] { display: block; }
+  .light [data-theme-icon="light"] { display: block; }
+  .light [data-theme-icon="dark"] { display: none; }
+</style>
+
+<script>
+  function initThemeToggle() {
+    const toggle = document.getElementById('theme-toggle');
+    if (!toggle || toggle.dataset.initialized) return;
+    toggle.dataset.initialized = 'true';
+
+    toggle.addEventListener('click', () => {
+      const isLight = document.documentElement.classList.toggle('light');
+      const theme = isLight ? 'light' : 'dark';
+      document.cookie = `theme=${theme};path=/;max-age=31536000;SameSite=Lax`;
+    });
+  }
+
+  initThemeToggle();
+  document.addEventListener('astro:page-load', initThemeToggle);
+</script>

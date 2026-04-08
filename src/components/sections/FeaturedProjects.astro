@@ -1,0 +1,33 @@
+---
+import { Icon } from 'astro-icon/components';
+import SectionHeading from '../ui/SectionHeading.astro';
+import ProjectCard from '../ui/ProjectCard.astro';
+import Button from '../ui/Button.astro';
+import { projects } from '../../data/projects';
+
+const featured = projects.filter((p) => p.featured).sort((a, b) => a.order - b.order);
+---
+
+<section class="py-14 fade-up">
+  <div class="max-w-6xl mx-auto px-6">
+    <SectionHeading
+      title="Proyectos Destacados"
+      subtitle="Arquitecturas reales, soluciones en producción"
+    />
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+      {featured.map((project, idx) => (
+        <div class="fade-up" style={`animation-delay: ${idx * 100}ms`}>
+          <ProjectCard project={project} featured={idx === 0} />
+        </div>
+      ))}
+    </div>
+
+    <div class="text-center">
+      <Button href="/projects" variant="secondary">
+        Ver todos los proyectos
+        <Icon name="ph:arrow-right-duotone" class="w-4 h-4" />
+      </Button>
+    </div>
+  </div>
+</section>

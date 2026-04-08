@@ -1,0 +1,45 @@
+---
+import { Icon } from 'astro-icon/components';
+import { siteConfig } from '../../data/site';
+---
+
+<footer class="border-t border-border/50 py-8 mt-16 relative overflow-hidden">
+  <!-- Subtle glow line at top -->
+  <div class="absolute top-0 left-1/4 right-1/4 h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent"></div>
+
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-6">
+        <a
+          href={siteConfig.links.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-text-muted hover:text-accent transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(0,240,255,0.5)]"
+          aria-label="GitHub"
+        >
+          <Icon name="ph:github-logo-duotone" class="w-5 h-5" />
+        </a>
+        <a
+          href={siteConfig.links.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-text-muted hover:text-accent-secondary transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(184,77,255,0.5)]"
+          aria-label="LinkedIn"
+        >
+          <Icon name="ph:linkedin-logo-duotone" class="w-5 h-5" />
+        </a>
+        <a
+          href={siteConfig.links.email}
+          class="text-text-muted hover:text-accent-tertiary transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(255,45,123,0.5)]"
+          aria-label="Email"
+        >
+          <Icon name="ph:envelope-duotone" class="w-5 h-5" />
+        </a>
+      </div>
+
+      <p class="text-sm text-text-muted font-mono">
+        &copy; {new Date().getFullYear()} <span class="gradient-text">{siteConfig.name}</span> // built with Astro
+      </p>
+    </div>
+  </div>
+</footer>

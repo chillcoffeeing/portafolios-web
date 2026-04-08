@@ -1,0 +1,39 @@
+---
+interface Props {
+  href?: string;
+  variant?: 'primary' | 'secondary' | 'ghost';
+  size?: 'sm' | 'md' | 'lg';
+  class?: string;
+  [key: string]: unknown;
+}
+
+const { href, variant = 'primary', size = 'md', class: className = '', ...rest } = Astro.props;
+
+const Tag = href ? 'a' : 'button';
+
+const variants = {
+  primary: 'bg-accent/90 hover:bg-accent text-bg font-semibold glow-cyan hover:glow-cyan-strong',
+  secondary: 'border border-accent/50 text-accent hover:bg-accent/10 hover:border-accent glow-cyan',
+  ghost: 'text-text-muted hover:text-accent',
+};
+
+const sizes = {
+  sm: 'px-4 py-2 text-sm',
+  md: 'px-6 py-2.5 text-sm',
+  lg: 'px-8 py-3 text-base',
+};
+---
+
+<Tag
+  href={href}
+  class:list={[
+    'inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-all duration-300 cursor-pointer',
+    variants[variant],
+    sizes[size],
+    className,
+  ]}
+  data-astro-prefetch={href ? '' : undefined}
+  {...rest}
+>
+  <slot />
+</Tag>

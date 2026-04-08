@@ -1,0 +1,31 @@
+---
+import { Icon } from 'astro-icon/components';
+import SectionHeading from '../ui/SectionHeading.astro';
+import Button from '../ui/Button.astro';
+---
+
+<section class="py-14 fade-up">
+  <div class="max-w-6xl mx-auto px-6">
+    <SectionHeading
+      title="Sobre Mí"
+      subtitle="Fullstack con enfoque en arquitectura"
+    />
+
+    <div class="max-w-3xl">
+      <p class="text-text-muted leading-relaxed text-lg mb-4">
+        Desarrollador full-stack con enfoque en arquitecturas escalables, sostenibles y desacopladas.
+        Especializado en el ecosistema Node.js/TypeScript, con dominio de frameworks como Astro,
+        Vue.js, Nuxt.js, React Native y FastAPI.
+      </p>
+      <p class="text-text-muted leading-relaxed mb-8">
+        Llevo productos completos desde el diseño de arquitectura hasta el despliegue y monitoreo en
+        producción. Experiencia en servidores VPS, automatizaciones con n8n, pipelines CI/CD e
+        integración de IA generativa con herramientas como Claude Code y OpenAI.
+      </p>
+      <Button href="/about" variant="ghost">
+        <span class="font-mono text-accent">&gt;</span> Leer más
+        <Icon name="ph:arrow-right-duotone" class="w-4 h-4" />
+      </Button>
+    </div>
+  </div>
+</section>

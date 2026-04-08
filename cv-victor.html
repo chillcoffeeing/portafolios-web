@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV - Victor | Desarrollador Full-Stack & Arquitecto de Software</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      color: #1a1a2e;
+      line-height: 1.55;
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 40px 48px;
+      background: #fff;
+    }
+
+    /* Header */
+    h1 { font-size: 2.4rem; font-weight: 700; letter-spacing: -0.5px; }
+    .subtitle { font-size: 1.1rem; color: #3b82f6; font-weight: 600; margin-top: 2px; }
+    .divider { height: 3.5px; width: 100%; background: #3b82f6; margin: 16px 0 24px; border-radius: 2px; }
+
+    /* Sections */
+    .section-title {
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      color: #1a1a2e;
+      margin-bottom: 10px;
+    }
+    .section-line { height: 1px; background: #dde1e7; margin-bottom: 14px; }
+    section { margin-bottom: 26px; break-inside: avoid; page-break-inside: avoid; }
+
+    /* Profile */
+    .profile { font-size: 0.92rem; color: #374151; }
+
+    /* Stack grid */
+    .stack-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 32px;
+      font-size: 0.88rem;
+    }
+    .stack-grid .row { display: flex; gap: 12px; }
+    .stack-grid .label {
+      min-width: 130px;
+      font-weight: 700;
+      color: #1a1a2e;
+      flex-shrink: 0;
+    }
+    .stack-grid .value { color: #4b5563; }
+
+    /* Projects */
+    .project { margin-bottom: 18px; break-inside: avoid; page-break-inside: avoid; }
+    .project-header { display: flex; align-items: center; gap: 10px; margin-bottom: 3px; }
+    .project-title { font-size: 1rem; font-weight: 700; }
+    .badge {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: #fff;
+      background: #3b82f6;
+      padding: 2px 10px;
+      border-radius: 10px;
+      letter-spacing: 0.3px;
+    }
+    .project-desc { font-size: 0.87rem; color: #4b5563; margin-bottom: 4px; }
+    .project-tech { font-size: 0.8rem; color: #3b82f6; font-weight: 500; }
+
+    /* Competencias */
+    .comp-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5px 24px;
+      font-size: 0.88rem;
+      color: #374151;
+    }
+    .comp-grid span::before { content: "\25B8  "; color: #1a1a2e; }
+
+    @media print {
+      body { padding: 24px 32px; }
+      section { margin-bottom: 20px; break-inside: avoid; page-break-inside: avoid; }
+      .project { break-inside: avoid; page-break-inside: avoid; }
+      .section-title { break-after: avoid; page-break-after: avoid; }
+      .section-line { break-after: avoid; page-break-after: avoid; }
+      .stack-grid { break-inside: avoid; page-break-inside: avoid; }
+      .comp-grid { break-inside: avoid; page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Victor</h1>
+  <div class="subtitle">Desarrollador Full-Stack & Arquitecto de Software</div>
+  <div class="divider"></div>
+
+  <!-- PERFIL PROFESIONAL -->
+  <section>
+    <div class="section-title">Perfil Profesional</div>
+    <div class="section-line"></div>
+    <p class="profile">
+      Desarrollador full-stack con enfoque en arquitecturas escalables, sostenibles y desacopladas.
+      Especializado en el ecosistema Node.js/TypeScript para backend y frontend, con dominio de
+      frameworks como Express, Fastify, NestJS y Astro. Experiencia gestionando servidores VPS
+      (Ubuntu/Debian), automatizaciones de flujos con n8n, y pipelines CI/CD. Capacidad demostrada
+      para integrar IA generativa (LLMs, embeddings, agentes) en cualquier modelo de proyecto,
+      desde apps moviles hasta plataformas web de alto trafico. Llevo productos completos desde
+      el diseno de arquitectura hasta el despliegue y monitoreo en produccion.
+    </p>
+  </section>
+
+  <!-- STACK TECNOLOGICO -->
+  <section>
+    <div class="section-title">Stack Tecnologico</div>
+    <div class="section-line"></div>
+    <div class="stack-grid">
+      <div class="row">
+        <span class="label">Backend / Node</span>
+        <span class="value">Express, Fastify, NestJS, Supabase Edge Functions, Laravel</span>
+      </div>
+      <div class="row">
+        <span class="label">Frontend Web</span>
+        <span class="value">Astro, React, Vue.js 3, Tailwind CSS</span>
+      </div>
+      <div class="row">
+        <span class="label">Mobile</span>
+        <span class="value">React Native, Expo, NativeWind, Zustand</span>
+      </div>
+      <div class="row">
+        <span class="label">Bases de Datos</span>
+        <span class="value">PostgreSQL, MySQL, Redis, Supabase</span>
+      </div>
+      <div class="row">
+        <span class="label">IA Generativa</span>
+        <span class="value">Groq, OpenAI API, LangChain, Embeddings, Agentes</span>
+      </div>
+      <div class="row">
+        <span class="label">Automatizacion</span>
+        <span class="value">n8n, webhooks, cron jobs, workflows event-driven</span>
+      </div>
+      <div class="row">
+        <span class="label">Infra / VPS</span>
+        <span class="value">Ubuntu/Debian, Nginx, Docker, Cloudflare, Railway, AWS S3</span>
+      </div>
+      <div class="row">
+        <span class="label">CI/CD & Deploy</span>
+        <span class="value">GitHub Actions, EAS, PM2, Certbot, SSH</span>
+      </div>
+      <div class="row">
+        <span class="label">Tiempo Real</span>
+        <span class="value">Socket.IO, Supabase Realtime, WebSockets</span>
+      </div>
+      <div class="row">
+        <span class="label">Admin Panels</span>
+        <span class="value">Filament 4, TanStack Query v5</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROYECTOS DESTACADOS -->
+  <section>
+    <div class="section-title">Proyectos Destacados</div>
+    <div class="section-line"></div>
+
+    <div class="project">
+      <div class="project-header">
+        <span class="project-title">FitCoach — App de Entrenamiento con IA</span>
+        <span class="badge">Mobile</span>
+      </div>
+      <p class="project-desc">
+        App movil multiplataforma que conecta entrenadores con atletas. Arquitectura modular con
+        Supabase como BaaS, Edge Functions serverless, planes de entrenamiento con multimedia
+        (video, GIF), logbook, calendario, notificaciones push y recomendaciones generadas por
+        IA con Groq/Llama 3.3 70B. Automatizaciones con n8n para onboarding y notificaciones.
+      </p>
+      <div class="project-tech">Expo - React Native - Supabase - TanStack Query - Zustand - NativeWind - n8n</div>
+    </div>
+
+    <div class="project">
+      <div class="project-header">
+        <span class="project-title">Voolty — Plataforma de Cashback</span>
+        <span class="badge">Full-Stack</span>
+      </div>
+      <p class="project-desc">
+        Ecosistema completo (app movil + API + sitio web + panel admin) para compras con cashback.
+        Arquitectura escalable con colas Redis, integracion de redes de afiliados (Awin, FlexOffers,
+        CJ, Soicos), sistema de retiros, programa de referidos y portal de partners. Deploy en
+        VPS con Nginx y CI/CD automatizado.
+      </p>
+      <div class="project-tech">Expo - Laravel 12 - Filament 4 - PostgreSQL - Redis - AWS S3 - Cloudflare - VPS</div>
+    </div>
+
+    <div class="project">
+      <div class="project-header">
+        <span class="project-title">Consultas El Universal — Portal de Servicios Ciudadanos</span>
+        <span class="badge">Web</span>
+      </div>
+      <p class="project-desc">
+        Portal con 120+ paginas para ciudadanos mexicanos: calculadoras financieras (ISR, IVA,
+        aguinaldo), plantillas de contratos, guias de tramites (CURP, RFC), conversor de divisas.
+        Arquitectura SSR/SSG con Astro para rendimiento y SEO optimo. En produccion en
+        eluniversal.com.mx/consultas.
+      </p>
+      <div class="project-tech">Astro - Vue.js 3 - Tailwind CSS - Chart.js - SSR/SSG</div>
+    </div>
+
+    <div class="project">
+      <div class="project-header">
+        <span class="project-title">Loterias — Resultados en Tiempo Real</span>
+        <span class="badge">Full-Stack</span>
+      </div>
+      <p class="project-desc">
+        Plataforma de resultados de loteria mexicana (Tris, Melate, Chispazo) con verificador
+        de boletos, estadisticas historicas, calendario interactivo y generador de numeros.
+        Variante white-label para Radio Formula. Scraping automatizado con n8n y deploy en VPS.
+      </p>
+      <div class="project-tech">Astro - Vue.js 3 - Laravel 12 - Filament 4 - n8n - SEO Schema.org</div>
+    </div>
+
+    <div class="project">
+      <div class="project-header">
+        <span class="project-title">Contratados — Marketplace Freelancer</span>
+        <span class="badge">Full-Stack</span>
+      </div>
+      <p class="project-desc">
+        Marketplace para freelancers con pagos en cripto (Binance Pay) y fiat (Payoneer), chat
+        en tiempo real con Socket.IO, sistema de resenas y gestion de proyectos end-to-end.
+        Backend Node.js con arquitectura de microservicios y despliegue en VPS con Docker.
+      </p>
+      <div class="project-tech">Node.js - React - FastAPI - PostgreSQL - Socket.IO - Redis - Docker</div>
+    </div>
+
+    <div class="project">
+      <div class="project-header">
+        <span class="project-title">Hub Descuentos — Plataforma de Ofertas</span>
+        <span class="badge">Mobile + Web</span>
+      </div>
+      <p class="project-desc">
+        App movil y sitio web para descubrir y gestionar descuentos y ofertas de tiendas.
+      </p>
+      <div class="project-tech">Expo - React Native - Astro - Vue.js 3 - Tailwind CSS</div>
+    </div>
+  </section>
+
+  <!-- COMPETENCIAS CLAVE -->
+  <section>
+    <div class="section-title">Competencias Clave</div>
+    <div class="section-line"></div>
+    <div class="comp-grid">
+      <span>Arquitecturas escalables y sostenibles</span>
+      <span>Desarrollo backend con Node.js/TypeScript</span>
+      <span>Automatizacion de flujos con n8n</span>
+      <span>Gestion de servidores VPS (Linux/Nginx)</span>
+      <span>Integracion de IA generativa en productos</span>
+      <span>Apps moviles multiplataforma (Expo)</span>
+      <span>Diseno e implementacion de APIs REST</span>
+      <span>CI/CD, Docker y despliegue en produccion</span>
+      <span>Integracion de pasarelas de pago</span>
+      <span>SEO tecnico y optimizacion de rendimiento</span>
+    </div>
+  </section>
+
+</body>
+</html>

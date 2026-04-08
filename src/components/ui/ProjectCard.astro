@@ -1,0 +1,57 @@
+---
+import { Icon } from 'astro-icon/components';
+import Badge from './Badge.astro';
+import type { Project } from '../../data/projects';
+
+interface Props {
+  project: Project;
+  featured?: boolean;
+}
+
+const { project, featured = false } = Astro.props;
+
+const typeLabels = {
+  web: 'Web',
+  mobile: 'Mobile',
+  fullstack: 'Full-Stack',
+};
+---
+
+<a
+  href={`/projects/${project.slug}`}
+  class:list={[
+    'group block rounded-xl arcade-card p-6',
+    featured && 'md:col-span-2',
+  ]}
+  data-astro-prefetch
+  transition:name={`project-card-${project.slug}`}
+>
+  <!-- Type Badge -->
+  <div class="flex items-center gap-3 mb-3">
+    <Badge variant="type">{typeLabels[project.type]}</Badge>
+    <span class="text-xs text-text-muted font-mono">{project.architecture}</span>
+  </div>
+
+  <!-- Title -->
+  <h3 class="text-xl font-bold mb-2 group-hover:gradient-text transition-all duration-300">
+    {project.title}
+  </h3>
+
+  <!-- Subtitle -->
+  <p class="text-sm text-text-muted mb-4 leading-relaxed">
+    {project.subtitle}
+  </p>
+
+  <!-- Stack Badges -->
+  <div class="flex flex-wrap gap-2">
+    {project.stack.map((tech) => (
+      <Badge>{tech}</Badge>
+    ))}
+  </div>
+
+  <!-- Arrow -->
+  <div class="mt-4 flex items-center gap-1 text-sm text-accent opacity-0 group-hover:opacity-100 transition-all duration-300">
+    <span class="font-mono">&gt;</span> Ver detalle
+    <Icon name="ph:arrow-right-duotone" class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+  </div>
+</a>

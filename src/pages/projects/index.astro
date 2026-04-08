@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHeading from '../../components/ui/SectionHeading.astro';
+import ProjectCard from '../../components/ui/ProjectCard.astro';
+import { projects } from '../../data/projects';
+
+const sortedProjects = [...projects].sort((a, b) => a.order - b.order);
+---
+
+<BaseLayout
+  title="Proyectos — Victor"
+  description="Proyectos full-stack, mobile y web con arquitecturas escalables en producción."
+>
+  <section class="py-14 arcade-grid-bg relative">
+    <!-- Glow orbs -->
+    <div
+      class="absolute top-20 left-1/4 w-[400px] h-[400px] rounded-full opacity-10 blur-[100px] pointer-events-none"
+      style="background: radial-gradient(circle, var(--color-accent) 0%, transparent 70%);"
+      aria-hidden="true"
+    ></div>
+    <div
+      class="absolute bottom-20 right-1/4 w-[300px] h-[300px] rounded-full opacity-8 blur-[80px] pointer-events-none"
+      style="background: radial-gradient(circle, var(--color-accent-secondary) 0%, transparent 70%);"
+      aria-hidden="true"
+    ></div>
+
+    <div class="relative max-w-6xl mx-auto px-6">
+      <SectionHeading
+        title="Proyectos"
+        subtitle="Cada proyecto refleja decisiones de arquitectura reales y tecnologías de producción"
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {sortedProjects.map((project, idx) => (
+          <div class="fade-up" style={`animation-delay: ${idx * 80}ms`}>
+            <ProjectCard project={project} />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

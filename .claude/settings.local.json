@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /c/Users/victo/OneDrive/Desktop/facturapp -maxdepth 2 -type f \\\\\\(-name package.json -o -name requirements.txt -o -name *.php -o -name *.py -o -name *.go \\\\\\))",
+      "Bash(find /c/Users/victo/OneDrive/Desktop/plataforma-freelancer -maxdepth 2 -type f \\\\\\(-name package.json -o -name requirements.txt -o -name *.php -o -name *.py \\\\\\))",
+      "Bash(find /c/Users/victo/OneDrive/Desktop/sea-app -maxdepth 2 -type f \\\\\\(-name package.json -o -name requirements.txt -o -name *.php -o -name *.py \\\\\\))",
+      "Bash(find /c/Users/victo/OneDrive/Desktop/tech-assessment -maxdepth 2 -type f \\\\\\(-name package.json -o -name requirements.txt -o -name *.php -o -name *.py \\\\\\))",
+      "Bash(find /c/Users/victo/OneDrive/Desktop/horoscopo-backend -maxdepth 2 -type f \\\\\\(-name *.js -o -name *.ts -o -name *.py -o -name *.go \\\\\\))",
+      "Bash(ls -la /c/Users/victo/OneDrive/Desktop/facturapp/.*)",
+      "Bash(grep -E \"\\\\.\\(json|txt|lock|yaml|yml\\)$\")",
+      "Bash(find /c/Users/victo/OneDrive/Desktop/facturapp -type f \\\\\\(-name *.php -o -name composer.json \\\\\\))",
+      "Bash(find /c/Users/victo/OneDrive/Desktop/sea-app -type f \\\\\\(-name *.js -o -name *.ts -o -name *.jsx -o -name *.tsx -o -name package.json \\\\\\))",
+      "Bash(grep -r \"DATABASE_URL\\\\|postgres\\\\|mongodb\\\\|mysql\" /c/Users/victo/OneDrive/Desktop/*/.env*)",
+      "Bash(grep -l \"Filament\\\\|Livewire\" /c/Users/victo/OneDrive/Desktop/*/composer.json)",
+      "Bash(grep -E \"supabase|mongoose|prisma|typeorm\" /c/Users/victo/OneDrive/Desktop/*/package.json)",
+      "Bash(npm create:*)",
+      "Bash(mkdir -p /tmp/portfolio-backup)",
+      "Bash(cp -r doc CLAUDE.md cv-victor.html /tmp/portfolio-backup/)",
+      "Bash(npx astro:*)",
+      "Bash(npm run:*)",
+      "Bash(npm install:*)",
+      "Bash(npm ls:*)",
+      "Bash(npm info:*)",
+      "Bash(npx @astrojs/upgrade:*)"
+    ]
+  }
+}

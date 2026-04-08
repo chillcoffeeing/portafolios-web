@@ -1,0 +1,100 @@
+---
+import { Icon } from 'astro-icon/components';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/ui/SectionHeading.astro';
+import SkillsGrid from '../components/sections/SkillsGrid.astro';
+import ContactCTA from '../components/sections/ContactCTA.astro';
+
+const competencies = [
+  { area: 'Arquitectura & Diseño', items: [
+    'Arquitecturas escalables y sostenibles',
+    'APIs REST bien diseñadas',
+    'Patrones: MVC, Repository, Service Layer, Event-Driven',
+    'Sistemas white-label y multi-tenant',
+    'Separación backend/frontend desacoplada',
+  ]},
+  { area: 'Desarrollo', items: [
+    'Full-stack TypeScript / JavaScript / Python',
+    'Apps móviles multiplataforma con Expo',
+    'Frontends de alto rendimiento con Astro y Nuxt.js',
+    'Desarrollo asistido por IA con Claude Code',
+  ]},
+  { area: 'DevOps & Producción', items: [
+    'Servidores VPS (Linux/Nginx/Docker)',
+    'CI/CD con GitHub Actions',
+    'Deploy en Cloudflare, Railway, VPS',
+    'Monitoreo con Sentry',
+  ]},
+  { area: 'Innovación', items: [
+    'Integración de IA generativa en productos',
+    'Automatización de workflows con n8n',
+    'Tiempo real con WebSockets',
+    'Pasarelas de pago (crypto + fiat)',
+  ]},
+];
+---
+
+<BaseLayout
+  title="Sobre Mí — Victor"
+  description="Desarrollador Full-Stack & Arquitecto de Software especializado en soluciones escalables."
+>
+  <section class="py-14 arcade-grid-bg relative">
+    <!-- Glow orb -->
+    <div
+      class="absolute top-20 right-1/4 w-[400px] h-[400px] rounded-full opacity-10 blur-[100px] pointer-events-none"
+      style="background: radial-gradient(circle, var(--color-accent-secondary) 0%, transparent 70%);"
+      aria-hidden="true"
+    ></div>
+
+    <div class="relative max-w-6xl mx-auto px-6">
+      <SectionHeading
+        title="Sobre Mí"
+        subtitle="Full-Stack Developer & Software Architect"
+      />
+
+      <div class="max-w-3xl mb-14">
+        <p class="text-lg text-text-muted leading-relaxed mb-6 fade-up">
+          Desarrollador full-stack con enfoque en arquitecturas escalables, sostenibles y desacopladas.
+          Especializado en el ecosistema Node.js/TypeScript para backend y frontend, con dominio de
+          frameworks como Express, Astro, Vue.js, Nuxt.js y React Native.
+        </p>
+        <p class="text-lg text-text-muted leading-relaxed mb-6 fade-up">
+          Experiencia gestionando servidores VPS (Ubuntu/Debian), automatizaciones de flujos con n8n,
+          y pipelines CI/CD. Capacidad demostrada para integrar IA generativa (LLMs, embeddings, agentes)
+          en cualquier modelo de proyecto, usando herramientas como Claude Code y OpenAI.
+        </p>
+        <p class="text-lg text-text-muted leading-relaxed fade-up">
+          Llevo productos completos desde el diseño de arquitectura hasta el despliegue y monitoreo en producción.
+        </p>
+      </div>
+
+      <!-- Competencies -->
+      <div class="mb-14">
+        <h2 class="text-2xl font-bold mb-8">Competencias Clave</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {competencies.map((comp, idx) => (
+            <div
+              class="rounded-xl arcade-card p-6 fade-up"
+              style={`animation-delay: ${idx * 100}ms`}
+            >
+              <h3 class="text-sm font-semibold uppercase tracking-widest text-accent font-mono mb-4">
+                <span class="text-accent-secondary">//</span> {comp.area}
+              </h3>
+              <ul class="space-y-2">
+                {comp.items.map((item) => (
+                  <li class="flex items-start gap-2 text-sm text-text-muted">
+                    <Icon name="ph:caret-right-duotone" class="w-4 h-4 text-accent mt-0.5 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <SkillsGrid />
+  <ContactCTA />
+</BaseLayout>
